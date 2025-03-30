@@ -13,10 +13,10 @@ public class TransformController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        var x = Mathf.PingPong(Time.time, 3);
+        var x = Mathf.PingPong(Time.time, 10);
         var p = new Vector3(-3, x, 0);
         transform.position = p;
 
-        transform.Rotate(new Vector3(0, 30, 0) * Time.deltaTime);
+        transform.Rotate(new Vector3(0, 200, 0) * Time.deltaTime);
     }
 }
