@@ -9,23 +9,17 @@ public class SimpleFloatData : ScriptableObject
 
    public void Begin(float amount)
    {
-      value = 1f;
+      value = amount;
    }
 
    public void AddValue(float amount)
    {
-      if (value < 1f)
-      {
-         value += amount;
-      }
+      value += amount;
    }
 
    public void SubtractValue(float amount)
    {
-      if (value > 0f)
-      {
-         value -= amount;
-      }
+      value -= amount;
    }
 
    public void SetValue(float amount)
