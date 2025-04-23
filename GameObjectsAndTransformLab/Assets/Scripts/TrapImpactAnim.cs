@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrapImpactAnim : MonoBehaviour
 {
-    public float growFactor = 1.4f;
+    public float growFactor = 1.8f;
 
     // Start is called before the first frame update
     public void Impact()

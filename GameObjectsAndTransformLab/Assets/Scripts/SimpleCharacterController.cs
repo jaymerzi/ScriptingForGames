@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CharacterController))]
 public class SimpleCharacterController : MonoBehaviour
@@ -8,10 +9,11 @@ public class SimpleCharacterController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 3f;
     public float gravity = -9.81f;
-    
+
     private CharacterController controller;
     private Transform thisTransform;
     private Vector3 velocity;
+    public UnityEvent triggerEvent;
 
     // Start is called before the first frame update
     private void Start()

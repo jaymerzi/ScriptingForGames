@@ -14,5 +14,11 @@ public class SimpleTriggerEventBehaviour : MonoBehaviour
         {
             triggerEvent.Invoke();
         }
+
+        if (other.gameObject.tag == "Damage")
+        {
+            triggerEvent.Invoke();
+        }
+
     }
 }

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5536792320251472053}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.27, y: 1.1, z: 0}
+  m_LocalPosition: {x: 11.15, y: 1.1, z: 0}
   m_LocalScale: {x: 4.8828287, y: 4.8828287, z: 4.8828287}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -158,6 +158,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 1
           m_StringArgument: CollectFruit
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 194620176934649999, guid: a3fb50c7dec531446b7952f13ecc680a, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: ScoreUpdate
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!95 &5398137952003896991
