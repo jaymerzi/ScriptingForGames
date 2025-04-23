@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4439626846624578462}
   - component: {fileID: 4811118674819592581}
   - component: {fileID: 1752609438224451808}
+  - component: {fileID: 5223994360836024877}
+  - component: {fileID: 5221574029102979066}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Damage
@@ -28,9 +30,9 @@ Transform:
   m_GameObject: {fileID: 1375139667641596993}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.86, y: 1.402, z: 0}
+  m_LocalPosition: {x: 3.69, y: 3.75, z: 0}
   m_LocalScale: {x: 2.7943, y: 2.7943, z: 2.7943}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,4 +135,62 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Hit
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 06a6fc27547dd214d9d6dea3d182acef, type: 2}
+        m_TargetAssemblyTypeName: SimpleFloatData, Assembly-CSharp
+        m_MethodName: SubtractValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.1
+          m_StringArgument: Hit
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5221574029102979066}
+        m_TargetAssemblyTypeName: TrapImpactAnim, Assembly-CSharp
+        m_MethodName: Impact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.1
+          m_StringArgument: Hit
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &5223994360836024877
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375139667641596993}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6716f86db14723439034268b246c035, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5221574029102979066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375139667641596993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f694abe7f6b04894aa022225cdedeb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growFactor: 1.2
