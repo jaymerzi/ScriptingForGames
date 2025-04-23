@@ -13,7 +13,6 @@ public class SimpleTriggerEventBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             triggerEvent.Invoke();
-            Debug.Log("Idiot ran into a spike");
         }
     }
 }
