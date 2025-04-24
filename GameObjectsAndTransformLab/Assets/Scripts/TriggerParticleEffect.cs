@@ -9,7 +9,7 @@ public class TriggerParticleEffect : MonoBehaviour
     public int firstEmissionAmount = 10;
     public int secondEmissionAmount = 20;
     public int thirdEmissionAmount = 30;
-    public float delayBetween = 0.2f;
+    public float delayBetween = 0.5f;
 
     public int particleAmount = 10; // Exposed variable for particle amount
 
@@ -22,7 +22,7 @@ public class TriggerParticleEffect : MonoBehaviour
     {
         if (other.gameObject.GetComponent<CharacterController>()) // Check if the player triggered the event
         {
-            particleSystem.Emit(particleAmount); // Emit the specified amount of particles
+            StartCoroutine(EmitParticlesCoroutine()); // Emit the specified amount of particles
         }
     }
 
