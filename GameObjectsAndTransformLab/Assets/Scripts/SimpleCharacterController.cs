@@ -7,6 +7,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(AudioSource))]
 public class SimpleCharacterController : MonoBehaviour
 {
+    
+    public SimpleFloatData health;
     public float moveSpeed = 5f;
     public float jumpForce = 3f;
     public float gravity = -9.81f;
@@ -28,9 +30,12 @@ public class SimpleCharacterController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        MoveCharacter();
-        ApplyGravity();
-        KeepCharacterOnXAxis();
+        if (health.value > 0f)
+        {
+            MoveCharacter();
+            ApplyGravity();
+            KeepCharacterOnXAxis();
+        }
     }
 
     private void MoveCharacter()
