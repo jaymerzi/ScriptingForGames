@@ -16,6 +16,7 @@ public class SimpleCharacterController : MonoBehaviour
 
     public SimpleBoolData groundCheck;
     public bool grounded;
+    public bool stop = false;
     public float groundedCheckDistance;
     private float bufferCheckDistance = 0.1f;
     private CharacterController controller;
@@ -28,6 +29,7 @@ public class SimpleCharacterController : MonoBehaviour
     private void Start()
     {
         grounded = false;
+        stop = false;
         groundCheck.value = grounded;
         controller = GetComponent<CharacterController>();
         thisTransform = transform;
@@ -53,8 +55,12 @@ public class SimpleCharacterController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
-        if (health.value > 0f)
+        if (health.value <= 0f)
+        {
+            StopMoving();
+        }
+
+        if (!stop)
         {   
             groundedCheckDistance = (controller.height / 2) + bufferCheckDistance;
             RaycastHit hit;
@@ -134,5 +140,10 @@ public class SimpleCharacterController : MonoBehaviour
         var currentPosition = thisTransform.position;
         currentPosition.z = 0f;
         thisTransform.position = currentPosition;
+    }
+
+    public void StopMoving()
+    {
+        stop = true;
     }
 }
