@@ -5,8 +5,9 @@ using UnityEngine;
 public class CharacterAnimationController : MonoBehaviour
 {
     [SerializeField]
-    SimpleCharacterController grounded;
     private Animator animator;
+    public SimpleBoolData groundCheck;
+    public bool grounded;
 
     // Start is called before the first frame update
     void Start()
@@ -17,23 +18,27 @@ public class CharacterAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleAnimations();
-        Debug.Log(grounded);
+        grounded = groundCheck.value;
+        if(!grounded)
+        {
+            animator.SetTrigger("Fall");
+        }
+        if(grounded)
+        {
+            animator.SetTrigger("NotGrounded");
+            HandleAnimations();
+        }
+        
     }
 
     private void HandleAnimations()
     {
+
         if (Input.GetAxis("Horizontal") != 0)
         {
-            if (grounded)
             {
                 animator.SetTrigger("Run");
             }
-        }
-
-        if (!grounded)
-        {
-            animator.SetTrigger("Fall");
         }
         else
         {
@@ -61,4 +66,9 @@ public class CharacterAnimationController : MonoBehaviour
         }
     }
 
+    public void Death()
+    {
+        animator.SetTrigger("Death");
+        Destroy(gameObject, 0.6f);
+    }
 }

@@ -13,7 +13,9 @@ public class SimpleCharacterController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 3f;
     public float gravity = -9.81f;
-    public static bool grounded = false;
+
+    public SimpleBoolData groundCheck;
+    public bool grounded;
     public float groundedCheckDistance;
     private float bufferCheckDistance = 0.1f;
     private CharacterController controller;
@@ -25,6 +27,8 @@ public class SimpleCharacterController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        grounded = false;
+        groundCheck.value = grounded;
         controller = GetComponent<CharacterController>();
         thisTransform = transform;
         audioSource = GetComponent<AudioSource>();
@@ -77,6 +81,7 @@ public class SimpleCharacterController : MonoBehaviour
 
             controller.Move(velocity * Time.deltaTime);
             KeepCharacterOnXAxis();
+            groundCheck.value = grounded;
         }
     }
 

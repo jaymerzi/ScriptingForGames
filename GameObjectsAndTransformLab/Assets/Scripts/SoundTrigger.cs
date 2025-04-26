@@ -20,4 +20,9 @@ public class SoundTrigger : MonoBehaviour
             //Debug.Log("Sound");
         }
     }
+
+    public void PlaySound()
+    {
+        audioSource.Play();
+    }
 }
