@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3357536931892267072}
   - component: {fileID: 1329005784398063322}
   - component: {fileID: 6915337184001545904}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BridgeLeft
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,5 +104,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.16, y: 0.16, z: 0.16}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.16, y: 0.02735307, z: 0.16}
+  m_Center: {x: 0, y: 0.06632317, z: 0}

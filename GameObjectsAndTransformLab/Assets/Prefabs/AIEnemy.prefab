@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 8319805014872129197}
   - component: {fileID: 7791607788130368956}
   - component: {fileID: 3751590297210343750}
+  - component: {fileID: 6285171029540343457}
+  - component: {fileID: 2087655412891012630}
   m_Layer: 0
   m_Name: AIEnemy
   m_TagString: Damage
@@ -162,9 +164,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6367560908665664636, guid: 3750f45c844123341b9a777a96cb1eca, type: 3}
+  m_Sprite: {fileID: 4740742658319907719, guid: d4f2f936f814df24fb7559370c465cdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.32, y: 0.32}
@@ -280,7 +282,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f6309e9c90dfe584f9a70572712695d8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.771
-  m_Pitch: 1
+  m_Pitch: 1.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -387,7 +389,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f16d5b15805854fb4adc642a70ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &3751590297210343750
 MonoBehaviour:
@@ -403,3 +407,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction1: 0
   direction2: 180
+--- !u!95 &6285171029540343457
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873292458715226324}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b7dea8281f946c4cb9e2e3933e63126, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2087655412891012630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873292458715226324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f694abe7f6b04894aa022225cdedeb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growFactor: 1.8
