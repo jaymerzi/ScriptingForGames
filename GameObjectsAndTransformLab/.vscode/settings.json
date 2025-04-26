@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "GameObjectsAndTransformLab.sln"
+    "dotnet.defaultSolution": "AdventureGame.sln"
 }

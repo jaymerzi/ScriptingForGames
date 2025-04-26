@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CharacterAnimationController : MonoBehaviour
 {
+    [SerializeField]
+    SimpleCharacterController grounded;
     private Animator animator;
 
     // Start is called before the first frame update
@@ -16,13 +18,22 @@ public class CharacterAnimationController : MonoBehaviour
     void Update()
     {
         HandleAnimations();
+        Debug.Log(grounded);
     }
 
     private void HandleAnimations()
     {
         if (Input.GetAxis("Horizontal") != 0)
         {
-            animator.SetTrigger("Run");
+            if (grounded)
+            {
+                animator.SetTrigger("Run");
+            }
+        }
+
+        if (!grounded)
+        {
+            animator.SetTrigger("Fall");
         }
         else
         {

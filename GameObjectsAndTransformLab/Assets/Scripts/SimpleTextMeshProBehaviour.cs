@@ -22,7 +22,7 @@ public class SimpleTextMeshProBehaviour : MonoBehaviour
     }
     public void UpdateWithIntData()
     {
-        textObj.text = "Score: " + dataObj.value.ToString(CultureInfo.InvariantCulture);
+        textObj.text = "x " + dataObj.value.ToString(CultureInfo.InvariantCulture);
     }
     
 }
