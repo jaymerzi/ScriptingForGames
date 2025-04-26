@@ -36,6 +36,11 @@ public class SimpleCharacterController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    public void ForceGrounded()
+    {
+        grounded = true;
+    }
+
     /*private void OnCollisionEnter(Collision other)
             {
                 if (other.gameObject.tag == "Ground")
