@@ -5,9 +5,13 @@ using UnityEngine;
 //public Rigidbody rigidbody;
 public class FallBlockScript : MonoBehaviour
 {
+
+    public Vector3 originalPos;
+    
     // Start is called before the first frame update
     void Start()
     {
+        originalPos = gameObject.transform.position;
         GetComponent<Rigidbody>().useGravity = false;
     }
 
@@ -23,9 +27,12 @@ public class FallBlockScript : MonoBehaviour
 
     IEnumerator test()
     {   
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         GetComponent<Rigidbody>().useGravity = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        yield return new WaitForSeconds(2f);
+        gameObject.transform.position = originalPos;
     }
 }

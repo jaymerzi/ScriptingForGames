@@ -10,6 +10,7 @@ public class LevelBeat : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             LevelManager.instance.LevelClear();
+            Debug.Log("Idiot");
         }
     }
 }

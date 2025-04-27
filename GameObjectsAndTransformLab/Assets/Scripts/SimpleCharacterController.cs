@@ -67,7 +67,7 @@ public class SimpleCharacterController : MonoBehaviour
 
         if (!stop)
         {   
-            groundedCheckDistance = (controller.height / 2) + bufferCheckDistance;
+            groundedCheckDistance = (0.75f) + bufferCheckDistance;
             RaycastHit hit;
             if (Physics.Raycast(transform.position, -thisTransform.up, out hit, groundedCheckDistance))
             {
@@ -96,12 +96,6 @@ public class SimpleCharacterController : MonoBehaviour
         }
     }
 
-        IEnumerator test()
-        {
-            yield return new WaitForSeconds(0f);
-            velocity.y = 0f;
-        }
-
     private void MoveCharacter()
     {
         var moveInput = Input.GetAxis("Horizontal");
@@ -117,28 +111,10 @@ public class SimpleCharacterController : MonoBehaviour
         {
             grounded = false;
             audioSource.Play();
-            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            velocity.y = jumpForce;
         }
     }
 
-    /*private void ApplyGravity()
-    {
-            velocity.y = 0f;
-        
-            //velocity.y += gravity * Time.deltaTime;
-
-        //if (grounded == false)
-        //{
-            //velocity.y += gravity * Time.deltaTime;
-        //}
-        //else
-        //{
-            //velocity.y = 0f; // Reset velocity when grounded
-        //}
-
-        // Apply the velocity to the controller
-        controller.Move(velocity * Time.deltaTime);
-    }*/
 
     private void KeepCharacterOnXAxis()
     {
