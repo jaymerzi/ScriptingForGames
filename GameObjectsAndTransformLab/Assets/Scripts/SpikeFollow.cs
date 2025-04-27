@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpikeFollow : MonoBehaviour
 {
     public Transform target;
+    public float yDisplacement = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +17,6 @@ public class SpikeFollow : MonoBehaviour
     void Update()
     {
         transform.position = target.position;
+        transform.position = new Vector3(target.position.x, target.position.y + yDisplacement, 0f);
     }
 }
