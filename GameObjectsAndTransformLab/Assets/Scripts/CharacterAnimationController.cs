@@ -44,26 +44,6 @@ public class CharacterAnimationController : MonoBehaviour
         {
             animator.SetTrigger("Idle");
         }
-        
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            animator.SetTrigger("WallJump");
-        }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            animator.SetTrigger("Jump");
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            animator.SetTrigger("Hit");
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            animator.SetTrigger("Fall");
-        }
     }
 
     public void Death()
